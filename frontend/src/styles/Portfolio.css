@@ -79,9 +79,12 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
   }
+
   50% {
     text-shadow: 0 0 20px #00ff41, 0 0 30px #00ff41, 0 0 40px #00ff41;
   }
@@ -122,6 +125,7 @@ body {
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(100%);
   }
@@ -146,7 +150,7 @@ body {
 
 /* Hero Section - Matrix Style */
 .hero-section {
-  min-height: 100vh;
+  min-height: 110vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -160,7 +164,6 @@ body {
 
 .hero-content {
   max-width: 900px;
-  margin-left: 460px;
   animation: fadeIn 1.5s ease-in;
 }
 
@@ -169,6 +172,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -187,9 +191,13 @@ body {
 }
 
 @keyframes glitch {
-  0%, 90%, 100% {
+
+  0%,
+  90%,
+  100% {
     text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41;
   }
+
   95% {
     text-shadow: 0 0 10px #ff0000, 0 0 20px #00ff41, 0 0 30px #0000ff;
     transform: translate(2px, 0);
@@ -212,11 +220,63 @@ body {
   line-height: 1.8;
   margin-bottom: 3rem;
   padding: 2rem;
+
+  border-radius: 4px;
+  position: relative;
+}
+
+.Work-button {
+  font-family: 'Orbitron', sans-serif;
+  padding: 1rem 2rem;
   border: 2px solid #00ff41;
   border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  background: transparent;
+  color: #00ff41;
+  overflow: hidden;
+
+}
+
+.Work-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 65, 0.1);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.Work-button:hover::before {
+  left: 0;
+}
+
+.Work-button.primary {
+  background: rgba(0, 255, 65, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+.Work-button.primary:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
+  transform: translateY(-2px);
+}
+
+.Work-button.secondary {
+  background: transparent;
+}
+
+.Work-button.secondary:hover {
   background: rgba(0, 255, 65, 0.05);
   box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
-  position: relative;
+  transform: translateY(-2px);
 }
 
 .hero-description::before {
@@ -227,7 +287,7 @@ body {
 
 /* Content Section - Matrix Style */
 .content-section {
-  padding: 4rem 2rem;
+  padding: 4rem;
   position: relative;
   z-index: 1;
 }
@@ -235,7 +295,6 @@ body {
 .hero-content-scroll {
   max-width: 1200px;
   margin: 0 auto;
-  background: rgba(0, 20, 10, 0.8);
   padding: 3rem;
   border: 2px solid #00ff41;
   border-radius: 4px;
@@ -259,8 +318,16 @@ body {
 }
 
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0.6; }
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0.6;
+  }
 }
 
 .subtitle {
@@ -277,13 +344,9 @@ body {
   font-family: 'Share Tech Mono', monospace;
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  color: #00ff41;
   line-height: 1.8;
-  background: rgba(0, 255, 65, 0.05);
   padding: 1.5rem;
-  border: 1px solid #00ff41;
   border-radius: 4px;
-  box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
 }
 
 .info-cards {
@@ -433,12 +496,19 @@ body {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateX(-50%) translateY(0);
   }
+
   40% {
     transform: translateX(-50%) translateY(-10px);
   }
+
   60% {
     transform: translateX(-50%) translateY(-5px);
   }
@@ -517,9 +587,7 @@ body {
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  display: none;
 }
 
 .skill-category {
@@ -542,7 +610,7 @@ body {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0px;
   right: 0;
   height: 2px;
   background: linear-gradient(90deg, transparent, #00ff41, transparent);
@@ -563,6 +631,34 @@ body {
   flex-wrap: wrap;
   gap: 0.8rem;
   justify-content: center;
+  background: rgba(0, 20, 10, 0.8);
+  padding: 3rem;
+  border: 2px solid #00ff41;
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Icon style for skills */
+.skill-icon {
+  width: 128px;
+  height: 128px;
+  padding: 6px;
+  background: rgba(0, 255, 65, 0.06);
+  border: 1px solid #00ff41;
+  border-radius: 8px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  filter: drop-shadow(0 0 4px rgba(0, 255, 65, 0.15));
+  object-fit: contain;
+}
+
+.skill-icon:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 18px rgba(0, 255, 65, 0.35);
+}
+
+.skill-tags img+img {
+  margin-left: 0.4rem;
 }
 
 .skill-tag {
@@ -586,61 +682,105 @@ body {
 }
 
 /* Responsive Design */
+/* Two-column layout for intro and technologies on wide screens */
+@media (min-width: 992px) {
+  .content-section {
+    width: 50%;
+    float: left;
+    padding-right: 1rem;
+    box-sizing: border-box;
+  }
+
+  .content-section .hero-content-scroll {
+    margin: 0;
+  }
+
+  .container {
+    width: 45%;
+    float: right;
+    margin-top: 0px;
+    margin-right: 50px;
+    padding-left: 2rem;
+    box-sizing: border-box;
+  }
+
+  .container h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #00ff41;
+    text-shadow: 0 0 20px #00ff41;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+
+  .skills-grid {
+    gap: 1.2rem;
+  }
+
+  /* Clear floats inside the main portfolio container */
+  .portfolio-container::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-name {
     font-size: 2.5rem;
   }
-  
+
   .hero-title {
     font-size: 1.2rem;
     letter-spacing: 2px;
   }
-  
+
   .hero-description {
     font-size: 1rem;
     padding: 1.5rem;
   }
-  
+
   .hero-content-scroll {
     padding: 2rem;
   }
-  
+
   .hero-text h1 {
     font-size: 1.8rem;
   }
-  
+
   .info-cards {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .info-card {
     padding: 1.2rem;
     min-height: 70px;
   }
-  
+
   .info-card h3 {
     font-size: 0.6rem;
   }
-  
+
   .info-card p {
     font-size: 1rem;
   }
-  
+
   .nav {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .nav-links {
     gap: 1rem;
   }
-  
+
   .cta-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .skills-grid {
     grid-template-columns: 1fr;
   }

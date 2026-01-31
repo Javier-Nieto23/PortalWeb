@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Header from './Header';
-import HeroSection from './GameBoyScreen';
-import Skills from './Skills';
+import HeroSection from './MainScreen';
 import '../styles/Portfolio.css';
 
 /* Principal component with Matrix theme */
@@ -15,7 +13,7 @@ const Portfolio = () => {
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -103,8 +101,8 @@ const Portfolio = () => {
         <div className="loader-content">
           <h1 className="loader-title">CARGANDO...</h1>
           <div className="progress-container">
-            <div 
-              className="progress-bar" 
+            <div
+              className="progress-bar"
               style={{ width: `${loadingProgress}%` }}
             ></div>
           </div>
@@ -114,56 +112,47 @@ const Portfolio = () => {
       </div>
 
       <canvas ref={canvasRef} id="matrix-canvas"></canvas>
-      <Header />
       <HeroSection scrollY={scrollY} isLoaded={isLoaded} />
-      
+
       {/* Content Section */}
       <div className="content-section">
         <div className="hero-content-scroll">
           <div className="hero-text">
-            <h1>¡Hola! Soy <span className="highlight">Javier Nieto</span></h1>
-            <h2 className="subtitle">Desarrollador Web Full Stack</h2>
+            <h1><span className="highlight">Sobre mi</span> </h1>
             <p className="description">
-              
-              <br />•Realizacion de aplicaciones moviles.
-              <br />•Realizacion de bases de datos.
-              <br />•Implementacion de bases de datos en visual basic.
-              <br />•Realizacion de paginas web.
-              <br />•Implementacion de API para bases de datos.
-              <br />•Manejo de tecnologias frontend y backend.
+              Totalmente comprometido con la filosofía del aprendizaje continuo,
+              soy un desarrollador full stack con una profunda pasión por JavaScript,
+              React y todo lo relacionado con el desarrollo web,
+              con un amor por la lógica, tecnología y la constante búsqueda de nuevas cosas por descubrir
+              impulsa mi entusiasmo y pasión por el desarrollo web,
+              me gusta dedicar mi tiempo a la musica, resolver puzzles y tocar la guitarra.
+
             </p>
 
-              
-            
-            <div className="info-cards">
-              <div className="info-card">
-                <h3>📧 Email</h3>
-                <p>javier.nietomancians@cesunbc.edu.mx</p>
-              </div>
-              <div className="info-card">
-                <h3>📱 Teléfono</h3>
-                <p>+52 664 369 6554</p>
-              </div>
-              <div className="info-card">
-                <h3>📍 Dirección</h3>
-                <p>Lomas conj. Residencial, calle montes escandinavos 115, 22116</p>
-              </div> 
-              <div className="info-card"> 
-                <h3>Github</h3>
-                <p><a href="https://github.com/Javier-Nieto23" target="_blank" rel="noopener noreferrer">https://github.com/Javier-Nieto23</a></p>
-              </div>
-            </div>
 
-            <div className="cta-buttons">
-              <button className="btn primary">Ver Proyectos</button>
-              <button className="btn secondary">Descargar CV</button>
-            </div>
           </div>
         </div>
       </div>
-      
-      <Skills />
-    </div>
+
+      <div className="container" id="skills-section">
+
+        <div className="skill-tags">
+          <h2>Tecnologías y Habilidades</h2>
+          <img className="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" title="Git" />
+          <img className="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker" />
+          <img className="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5" title="HTML5" />
+          <img className="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3" title="CSS3" />
+          <img className="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Javascript_badge.svg" alt="JavaScript" title="JavaScript" />
+          <img className="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" title="React" />
+          <img className="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js" title="Node.js" />
+          <img className='skill-icon' src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="Express" title="Express" />
+          <img className="skill-icon" src="https://cdn.worldvectorlogo.com/logos/postgresql.svg" alt="PostgreSQL" title="PostgreSQL" />
+        </div>
+      </div>
+
+
+
+    </div >
   );
 };
 
