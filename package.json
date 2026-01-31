@@ -6,7 +6,7 @@
   "homepage": "https://Javier-Nieto23.github.io/PortalWeb",
   "scripts": {
     "dev": "vite",
-    "build": " vite build",
+    "build": "tsc && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
