@@ -9,7 +9,7 @@ const Projects = () => {
             id: 1,
             title: 'Validador',
             description: 'esta pagina web se creo con la intencion de validar documentos pdf, convirtiendolos a escala de grises, validando que no tengan informacion dedicala o codigo malicioso incrustado, esta pagina la realize durante mi estancia en SEER Trafico S.A. de C.V..',
-            image: '/src/assets/validador.png',
+            image: '/images/Validador.png',
             link: '#',
 
         },
@@ -17,7 +17,7 @@ const Projects = () => {
             id: 2,
             title: 'Tickets',
             description: 'Este es un sistema de gestion de tickets para soporte tecnico,el desarrollado fue con React en el frontend y Node.js en el backend, permitiendo a los usuarios crear, asignar y rastrear tickets de soporte de manera eficiente, ademas los tickets tambien eran para control interno.',
-            image: '/src/assets/Tickets.png',
+            image: '/images/Tickets.png',
             link: '#'
         }
     ];
