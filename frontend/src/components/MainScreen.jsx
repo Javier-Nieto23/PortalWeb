@@ -1,13 +1,6 @@
 import React, { } from 'react';
 
-const HeroSection = () => {
-  const handleScrollToSkills = () => {
-    const skillsSection = document.getElementById('skills-section');
-    if (skillsSection) {
-      skillsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+const HeroSection = ({ onScrollToSkills }) => {
   return (
     <div className="hero-section">
       <div className="hero-content">
@@ -18,10 +11,7 @@ const HeroSection = () => {
           especializado en bases de datos y desarrollo de páginas web,
           Me especializo en crear soluciones web innovadoras y funcionales.
           <br /><br />
-          <button className="Work-button" onClick={handleScrollToSkills}>Ver mi trabajo!</button>
-
-
-
+          <button className="Work-button" onClick={onScrollToSkills}>Ver mi trabajo!</button>
         </p>
       </div>
     </div>

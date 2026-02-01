@@ -150,16 +150,18 @@ body {
 
 /* Hero Section - Matrix Style */
 .hero-section {
-  min-height: 110vh;
+  margin-left: 40px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  padding-top: 80px;
+  padding: 1rem;
+  padding-top: 0px;
   position: relative;
   z-index: 1;
   text-align: center;
+  border-bottom: 2px solid rgba(0, 255, 65, 0.3);
 }
 
 .hero-content {
@@ -290,13 +292,14 @@ body {
   padding: 4rem;
   position: relative;
   z-index: 1;
+  border-top: 2px solid rgba(0, 255, 65, 0.3);
 }
 
 .hero-content-scroll {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem;
-  border: 2px solid #00ff41;
+  padding: 1rem;
+  border: 1.5px solid #00ff41;
   border-radius: 4px;
   box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
   backdrop-filter: blur(10px);
@@ -573,6 +576,8 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 4rem 2rem;
+  border-top: 2px solid rgba(0, 255, 65, 0.3);
 }
 
 .skills h2 {
@@ -683,11 +688,27 @@ body {
 
 /* Responsive Design */
 /* Two-column layout for intro and technologies on wide screens */
-@media (min-width: 992px) {
+@media (min-width: 100px) {
+  .portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .hero-section {
+    flex-basis: 100%;
+    width: 100%;
+    min-height: 120vh;
+    margin: 0;
+    padding: 0;
+  }
+
   .content-section {
-    width: 50%;
-    float: left;
-    padding-right: 1rem;
+    flex: 0 0 50%;
+    padding: 4rem 2rem;
+    margin: 0;
     box-sizing: border-box;
   }
 
@@ -696,18 +717,18 @@ body {
   }
 
   .container {
-    width: 45%;
-    float: right;
-    margin-top: 0px;
-    margin-right: 50px;
-    padding-left: 2rem;
+    flex: 0 0 50%;
+    margin: 0;
+    padding: 4rem 2rem;
+    margin-bottom: 20vh;
     box-sizing: border-box;
+    max-width: none;
   }
 
   .container h2 {
     font-family: 'Orbitron', sans-serif;
     font-size: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 10rem;
     color: #00ff41;
     text-shadow: 0 0 20px #00ff41;
     text-transform: uppercase;
@@ -721,7 +742,7 @@ body {
   /* Clear floats inside the main portfolio container */
   .portfolio-container::after {
     content: "";
-    display: table;
+    display: none;
     clear: both;
   }
 }

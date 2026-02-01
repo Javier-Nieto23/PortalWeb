@@ -1,0 +1,205 @@
+/* Calculator Styles */
+.calculator-container {
+    flex-basis: 100%;
+    width: auto;
+    padding: 4rem 2rem;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 60vh;
+    margin-left: 2rem;
+}
+
+.calculator-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.calculator-wrapper h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #00ff41;
+    text-shadow: 0 0 16px #00ff41;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.calculator {
+    background: rgba(8, 12, 10, 0.55);
+    border: 1.8px solid rgba(0, 255, 65, 0.9);
+    border-radius: 8px;
+    padding: 1.6rem;
+    box-shadow: 0 0 22px rgba(0, 255, 65, 0.18);
+    backdrop-filter: blur(6px);
+}
+
+.calculator-content {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.calculator-info {
+    width: auto;
+    max-width: calc(100% - 460px);
+    background: transparent;
+    color: #dfffe6;
+    font-family: 'Inter', system-ui, Arial, sans-serif;
+    padding: 0.2rem 0.6rem;
+    text-align: left;
+    margin-left: 2rem;
+}
+
+.calculator-info h3 {
+    color: #00ff41;
+    margin-bottom: 0.6rem;
+    font-size: 1.18rem;
+}
+
+.calculator-info p,
+.calculator-info li {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    color: #cfeee0;
+}
+
+.calculator-info ul {
+    margin-left: 1rem;
+}
+
+.display {
+    background: rgba(0, 0, 0, 0.45);
+    border: 1.2px solid rgba(0, 255, 65, 0.7);
+    border-radius: 4px;
+    padding: 1rem 1rem;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.9rem;
+    color: #00ff41;
+    text-shadow: 0 0 8px #00ff41;
+    text-align: right;
+    margin-bottom: 1.2rem;
+    min-height: 52px;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+}
+
+.btn {
+    font-family: 'Orbitron', sans-serif;
+    padding: 1.2rem;
+    border: 1.5px solid #00ff41;
+    border-radius: 4px;
+    background: rgba(0, 255, 65, 0.05);
+    color: #00ff41;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #00ff41;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+.btn:hover {
+    background: rgba(0, 255, 65, 0.15);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+.btn-operation {
+    background: rgba(255, 100, 50, 0.1);
+    border-color: #ff6432;
+    color: #ff6432;
+    text-shadow: 0 0 5px #ff6432;
+    box-shadow: 0 0 10px rgba(255, 100, 50, 0.2);
+}
+
+.btn-operation:hover {
+    background: rgba(255, 100, 50, 0.2);
+    box-shadow: 0 0 20px rgba(255, 100, 50, 0.4);
+}
+
+.btn-equals {
+    background: rgba(0, 255, 65, 0.2);
+    border-color: #00ff41;
+    color: #00ff41;
+    grid-column: span 1;
+}
+
+.btn-equals:hover {
+    background: rgba(0, 255, 65, 0.3);
+    box-shadow: 0 0 25px rgba(0, 255, 65, 0.5);
+}
+
+.btn-clear {
+    background: rgba(255, 50, 50, 0.1);
+    border-color: #ff3232;
+    color: #ff3232;
+    text-shadow: 0 0 5px #ff3232;
+    box-shadow: 0 0 10px rgba(255, 50, 50, 0.2);
+}
+
+.btn-clear:hover {
+    background: rgba(255, 50, 50, 0.2);
+    box-shadow: 0 0 20px rgba(255, 50, 50, 0.4);
+}
+
+.btn-zero {
+    grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+    .calculator-container {
+        padding: 3rem 1rem;
+        flex-basis: 100%;
+        margin-left: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .calculator-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calculator-info {
+        max-width: 100%;
+        width: 100%;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .calculator-wrapper h2 {
+        font-size: 1.8rem;
+    }
+
+    .display {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    .btn {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}

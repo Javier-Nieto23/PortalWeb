@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import HeroSection from './MainScreen';
+import AboutMe from './AboutMe';
+import Skills from './Skills';
+import Calculator from './Calculator';
+import Tetris from './Tetris';
+import Projects from './Projects';
 import '../styles/Portfolio.css';
 
 /* Principal component with Matrix theme */
@@ -9,6 +14,14 @@ const Portfolio = () => {
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [showLoading, setShowLoading] = useState(true);
   const canvasRef = useRef(null);
+  const aboutMeRef = useRef(null);
+
+  // Función para scroll a la sección de About Me
+  const handleScrollToAboutMe = () => {
+    if (aboutMeRef.current) {
+      aboutMeRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -112,44 +125,26 @@ const Portfolio = () => {
       </div>
 
       <canvas ref={canvasRef} id="matrix-canvas"></canvas>
-      <HeroSection scrollY={scrollY} isLoaded={isLoaded} />
 
-      {/* Content Section */}
-      <div className="content-section">
-        <div className="hero-content-scroll">
-          <div className="hero-text">
-            <h1><span className="highlight">Sobre mi</span> </h1>
-            <p className="description">
-              Totalmente comprometido con la filosofía del aprendizaje continuo,
-              soy un desarrollador full stack con una profunda pasión por JavaScript,
-              React y todo lo relacionado con el desarrollo web,
-              con un amor por la lógica, tecnología y la constante búsqueda de nuevas cosas por descubrir
-              impulsa mi entusiasmo y pasión por el desarrollo web,
-              me gusta dedicar mi tiempo a la musica, resolver puzzles y tocar la guitarra.
+      {/* Pasar función de scroll a HeroSection */}
+      <HeroSection scrollY={scrollY} isLoaded={isLoaded} onScrollToSkills={handleScrollToAboutMe} />
 
-            </p>
+      {/* Sección Sobre Mi con ref para scroll */}
+      <AboutMe ref={aboutMeRef} />
+
+      {/* Sección Skills */}
+      <Skills />
+
+      {/* Sección Mis Proyectos - Calculadora */}
+      <Calculator />
 
 
-          </div>
-        </div>
-      </div>
 
-      <div className="container" id="skills-section">
+      {/* Sección Mis Proyectos - Tetris */}
+      <Tetris />
 
-        <div className="skill-tags">
-          <h2>Tecnologías y Habilidades</h2>
-          <img className="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" title="Git" />
-          <img className="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker" />
-          <img className="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5" title="HTML5" />
-          <img className="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3" title="CSS3" />
-          <img className="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Javascript_badge.svg" alt="JavaScript" title="JavaScript" />
-          <img className="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" title="React" />
-          <img className="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js" title="Node.js" />
-          <img className='skill-icon' src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="Express" title="Express" />
-          <img className="skill-icon" src="https://cdn.worldvectorlogo.com/logos/postgresql.svg" alt="PostgreSQL" title="PostgreSQL" />
-        </div>
-      </div>
-
+      {/* Sección Proyectos Actuales */}
+      <Projects />
 
 
     </div >
